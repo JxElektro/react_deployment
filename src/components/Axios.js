@@ -7,4 +7,4 @@ export const fetchData = async query => {  // Crea la var que almacena la Data
   return await axios.get(url); // obtiene el resultado despues de esperar(url)
 };
 
-fetchData('react') // ??
+// fetchData() // ?? Està de mas no tiene funcion
