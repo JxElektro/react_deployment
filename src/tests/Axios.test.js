@@ -15,7 +15,7 @@ describe("fetchData", () => { // llamado del test
 
     axios.get.mockResolvedValueOnce(Promise.resolve(data)) // Recibe realmente //Resolucion Promesa que trae el Data
 
-    await expect(fetchData('reeee')).resolves.toEqual(data); // espectactativa //que espera para comparar
+    await expect(fetchData('re')).resolves.toEqual(data); // espectactativa //que espera para comparar
                             
     expect(axios.get).toHaveBeenCalledWith(`${API}/search?query=re`) // se llamo al mock con argumentos especificos
 
