@@ -18,6 +18,5 @@ jobs:
         node-version: "16.17"
       - name: Installing Dependencies
         run: npm install
-
       - name: testing our app
       - run: npm test
