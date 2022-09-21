@@ -1,30 +1,23 @@
-# This is a basic workflow to help you get started with Actions
+name: testing
 
-name: CI
-
-# Controls when the workflow will run
+# que solo corra cuando hay un pull request a main
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
+  test: # step para testear nuestra app react
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
-        uses: actions/setup_node@v1
+        uses: actions/setup-node@v1
         with:
-        node-version: "16.17"
+          node-version: "16.17"
       - name: Installing Dependencies
-        run: npm install
+        run: npm i
+
       - name: testing our app
-      - run: npm test
+        run: npm test
